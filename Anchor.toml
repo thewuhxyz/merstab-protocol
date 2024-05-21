@@ -1,0 +1,20 @@
+[features]
+seeds = false
+skip-lint = false
+[programs.localnet]
+m_protocol = "Fs9ajGLFFWcFqNWQx7wGzwFjTfyBCzwbu6MXqi3vSrro"
+
+[programs.devnet]
+m_protocol = "8ifV5e1VBx8fYEA6tBBfBFYNme8u7AtwqvkrVxjqTPCR"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+refresh = "anchor build && anchor deploy"
+mango = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/mango.ts"
